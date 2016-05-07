@@ -1,6 +1,6 @@
 {
   "name": "react-select2",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "React component for Select2",
   "main": "lib/components/Select2.js",
   "files": [
