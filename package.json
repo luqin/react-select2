@@ -1,0 +1,61 @@
+{
+  "name": "react-select2",
+  "version": "4.0.0",
+  "description": "React component for Select2",
+  "main": "lib/components/Select2.js",
+  "files": [
+    "lib",
+    "src",
+    "css"
+  ],
+  "scripts": {
+    "start": "cd examples && node server.js",
+    "watch": "cd examples && webpack --watch",
+    "build": "cd examples && webpack -p",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luqin/react-select2"
+  },
+  "keywords": [
+    "react-component",
+    "select2",
+    "tags",
+    "multiselect",
+    "select",
+    "input"
+  ],
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "select2": "^4.0.0",
+    "shallow-equal-fuzzy": "^0.0.2"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "eslint-plugin-react": "^3.16.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-rc || ^15.0.0"
+  },
+  "license": "MIT"
+}
