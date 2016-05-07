@@ -1,11 +1,11 @@
-# react-select2-wrapper
+# react-select2
 
 Wrapper for [Select2](https://select2.github.io/)
 
 ## Installation
 
 ```
-npm install react-select2-wrapper --save
+npm install react-select2 --save
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install react-select2-wrapper --save
 ### Basic usage
 
 ```js
-import Select2 from 'react-select2-wrapper';
+import Select2 from 'react-select2';
 …
 
 <Select2
@@ -170,7 +170,7 @@ this.refs.tags.el
 Default theme in [css/select2.css](css/select2.css)
 
 ```js
-import 'react-select2-wrapper/css/select2.css';
+import 'react-select2/css/select2.css';
 ```
 
 ## Development
