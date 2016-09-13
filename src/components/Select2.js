@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import DOMProperty from 'react/lib/DOMProperty';
+import EventPluginRegistry from 'react/lib/EventPluginRegistry';
 import shallowEqualFuzzy from 'shallow-equal-fuzzy';
 import $ from 'jquery';
 import 'select2';
@@ -136,16 +138,29 @@ export default class Select2 extends Component {
   makeOption(item, k) {
     if (this.isObject(item)) {
       const { id, text, ...itemParams } = item;
-      return (<option key={`option-${k}`} value={id} {...itemParams}>{text}</option>);
+      const filteredAttributes = this.filterAttributes(itemParams);
+      return (<option key={`option-${k}`} value={id} {...filteredAttributes}>{text}</option>);
     }
 
     return (<option key={`option-${k}`} value={item}>{item}</option>);
   }
 
+  filterAttributes(attributes) {
+    let filteredAttributes = {};
+
+    for (const name in attributes) {
+      if (DOMProperty.properties.hasOwnProperty(name) || DOMProperty.isCustomAttribute(name) || EventPluginRegistry.registrationNameModules.hasOwnProperty(name)) {
+        filteredAttributes[name] = attributes[name];
+      }
+    }
+    return filteredAttributes;
+  }
+
   render() {
     const { data, value, ...params } = this.props;
+    const filteredAttributes = this.filterAttributes(params);
     return (
-      <select ref="select" {...params}>
+      <select ref="select" {...filteredAttributes}>
         {data.map((item, k) => {
           if (this.isObject(item) && this.isObject(item.children)) {
             const { children, text, ...itemParams } = item;
